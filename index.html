@@ -6,37 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Arush Nandakumar Menon</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
+    <div id="container">
         <div class="navbar">
             <div class="left">
                 <ul class="nav-items">
-                    <li class=""><a class="nav-text nav-item" href="/Portfolio 3/index.html">Home</a></li>
-                    <li class=""><a class="nav-text nav-item" href="#secondPage">About</a></li>
-                    <li class=""><a class="nav-text nav-item" href="#thirdPage">Projects</a></li>
-                    <li class=""><a class="nav-text nav-item" href="#fourthPage">Contact</a></li>
-                    <li class="resume"><a class="nav-text nav-item" href="/Portfolio 3/Resume.pdf" target="_blank">Resume</a></li>
+                    <li><a class="nav-text nav-item" href="/index.html">Home</a></li>
+                    <li><a class="nav-text nav-item" href="#secondPage">About</a></li>
+                    <li><a class="nav-text nav-item" href="#thirdPage">Projects</a></li>
+                    <li><a class="nav-text nav-item" href="#fourthPage">Contact</a></li>
+                    
                 </ul>
             </div>
             <div class="right">
                 <ul class="nav-items">
                     <li class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li class="nav-item darkmode"><i class="fa-regular fa-sun"></i></li>
-                    <li class="nav-item lightmode"><i class="fa-solid fa-sun"></i></li>
+                    <li onclick=lightMode() class="nav-item lightmode"><i class="fa-regular fa-sun"></i></li>
+                    <li onclick=darkMode() class="nav-item darkmode"><i class="fa-solid fa-moon"></i></i></li>
                 </ul>
             </div>
         </div>
 
         <div class="content">
             <div class="top-btn">
-                <button><i class="fa-solid fa-circle-arrow-up"></i></button>
+                <a href="#container"><i class="fa-solid fa-circle-arrow-up"></i></a>
             </div>
 
             <section id="firstPage">
@@ -44,9 +47,13 @@
                 <div class="details">
                     <h1>Arush Nandakumar Menon</h1>
                     <p>I'm a <span>Frontend Developer</span></p>
+                    
                     <div class="social">
-                        <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a class="resume nav-text nav-item" href="/Resume.pdf" target="_blank">Download Resume</a>
+                        <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
@@ -66,14 +73,18 @@
                             <p>Degree: BTech in CSE Core</p>
                         </div>
                     </div>
-                    
+
                     <div class="about">
                         <p>
-                            I'm a passionate frontend web developer and aspiring tech innovator based in VIT Bhopal. With
+                            I'm a passionate frontend web developer and aspiring tech innovator based in VIT Bhopal.
+                            With
                             a keen interest in creating intuitive and engaging user experiences, I've developed several
-                            non-functional clones of popular websites, including Instagram, Apple and Netflix, to hone my skills
-                            in HTML, CSS, and JavaScript. I am continuously exploring new technologies and methodologies to
-                            enhance my projects and deliver impactful solutions. Thank you for visiting my portfolio, and I look
+                            non-functional clones of popular websites, including Instagram, Apple and Netflix, to hone
+                            my skills
+                            in HTML, CSS, and JavaScript. I am continuously exploring new technologies and methodologies
+                            to
+                            enhance my projects and deliver impactful solutions. Thank you for visiting my portfolio,
+                            and I look
                             forward to connecting with you!
                         </p>
                     </div>
@@ -82,7 +93,7 @@
 
             <section id="thirdPage">
                 <h1 class="heading">PROJECTS</h1>
-                <div class="cards">
+                <!-- <div class="cards">
                     <div class="card">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -130,8 +141,8 @@
                             <p class="card-text">...</p>
                         </div>
                     </div>
-                </div>
-                
+                </div> -->
+
             </section>
 
             <section id="fourthPage">
@@ -147,10 +158,10 @@
                                 <input type="text" placeholder="Your Name" id="username" name="user">
                                 <input type="text" placeholder="Your Email" id="useremail" name="user">
                             </div>
-                        
+
                             <label for="subject"></label>
                             <input type="text" placeholder="Subject" id="subject" name="user">
-        
+
                             <label for="feedback"></label>
                             <textarea id="feeback" placeholder="Message" id="message" name="user"></textarea><br>
                             <button>Send Message</button>
@@ -158,13 +169,16 @@
                     </div>
                 </div>
                 <div class="social-end">
-                    <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
                     <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
                 </div>
             </section>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
