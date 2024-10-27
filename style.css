@@ -11,9 +11,10 @@ body {
     color: #4B3D3D;
     background-color: #faf5f1;
     font-family: "Afacad Flux", sans-serif;
+    transition: 0.5s;
 }
 
-.container {
+#container {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -70,9 +71,12 @@ body {
     background-color: #f0e1d4;
 }
 
-.darkmode:checked body{
-    background-color: black;
-    color: white;
+.resume {
+    background-color: #f0e1d4;
+}
+
+.lightmode{
+    display: none;
 }
 
 #firstPage {
@@ -83,7 +87,6 @@ body {
 }
 
 .details {
-    color: #45505B;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +113,7 @@ body {
 
 .details p span{
     color: #E1B07C;
+    transition: 0.5s;
 }
 
 .social {
@@ -286,35 +290,17 @@ textarea{
     position: fixed;
     right: 50px;
     bottom: 50px;
-    z-index: 100; 
+    z-index: 100;
+    display: none;
 }
 
-.top-btn button{
-    background-color: white;
-    border: none;
+.toggle {
+    display: block;
+}
+
+.top-btn a{
+    color: black;
     font-size: 4vmin;
-}
-
-#firstPage:current .top-btn{
-    display: none
-}
-
-@keyframes typing {
-    from {
-        width: 0; /* Start from 0 width */
-    }
-    to {
-        width: 100%; /* End at full width */
-    }
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent; /* Invisible caret */
-    }
-    50% {
-        border-color: #333; /* Visible caret */
-    }
 }
 
 @media (max-width:1245px) {
@@ -336,7 +322,7 @@ textarea{
     }
 }
 
-@media (max-width:674px) {
+@media (max-width:874px) {
     
 }
 
