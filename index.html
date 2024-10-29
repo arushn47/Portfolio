@@ -4,180 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Arush Nandakumar Menon</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio 4</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div id="container">
+<body class="dark-mode">
+    <nav class="nav">
         <div class="navbar">
-            <div class="left">
-                <ul class="nav-items">
-                    <li><a class="nav-text nav-item" href="/index.html">Home</a></li>
-                    <li><a class="nav-text nav-item" href="#secondPage">About</a></li>
-                    <li><a class="nav-text nav-item" href="#thirdPage">Projects</a></li>
-                    <li><a class="nav-text nav-item" href="#fourthPage">Contact</a></li>
-                    
-                </ul>
-            </div>
-            <div class="right">
-                <ul class="nav-items">
-                    <li class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li onclick=lightMode() class="nav-item lightmode"><i class="fa-regular fa-sun"></i></li>
-                    <li onclick=darkMode() class="nav-item darkmode"><i class="fa-solid fa-moon"></i></i></li>
-                </ul>
+            <ul class="nav-right">
+                <li><a href="/index.html" class="logo">Portfolio</a></li>
+                <li class="hideOnMoblie nav-item"><a href="#home" class="active">Home</a></li>
+                <li class="hideOnMoblie nav-item"><a href="#about">About</a></li>
+                <li class="hideOnMoblie nav-item"><a href="#projects">Projects</a></li>
+                <li class="hideOnMoblie nav-item"><a href="#skills">Skills</a></li>
+            </ul>
+
+            <ul class="nav-left">
+                <li class="hideOnMoblie"><a href="/Resume.pdf" target="_blank" id="resume-btn">Resume</a></li>
+                <li class="hideOnMoblie"><a href="#contact" id="contact-btn">Contact</a></li>
+                <li><a><i class="fa-solid fa-sun" onclick=toggleMode()></i></a></li>
+                <li><a class="bars ham" onclick=showSidebar()><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
+        </div>
+        <a class="bars closeham" onclick=hideSidebar()><i class="fa-solid fa-xmark"></i></a>
+        <ul class="side-bar">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="/Resume.pdf" target="_blank">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="home-info">
+            <a id="name">Arush Nandakumar Menon</a>
+            <a id="pro">I'm a <span> </span></a>
+            <div class="btn-sci">
+                <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
             </div>
         </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="/images/photo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="content">
-            <div class="top-btn">
-                <a href="#container"><i class="fa-solid fa-circle-arrow-up"></i></a>
+    <section id="about">
+        <h1 class="heading">ABOUT</h1>
+        <div class="info">
+            <div class="info-content">
+                <h1>Arush Nandakumar Menon</h1>
+                <p><i class="fa-solid fa-caret-right"></i>Age : 18</p>
+                <p><i class="fa-solid fa-caret-right"></i>University : VIT Bhopal University</p>
+                <p><i class="fa-solid fa-caret-right"></i>Degree : Bachelor of Technology in CSE (Core)</p>
+                <p><i class="fa-solid fa-caret-right"></i>Year : Second Year</p>
+                <p><i class="fa-solid fa-caret-right"></i>CGPA : 8</p>
             </div>
 
-            <section id="firstPage">
-                <img class="photo" src="/arush1.png">
-                <div class="details">
-                    <h1>Arush Nandakumar Menon</h1>
-                    <p>I'm a <span>Frontend Developer</span></p>
-                    
-                    <div class="social">
-                        <a class="resume nav-text nav-item" href="/Resume.pdf" target="_blank">Download Resume</a>
-                        <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
-            </section>
+            <div class="about-info">
+                <p>
+                    I'm a passionate frontend web developer and aspiring tech innovator based in VIT Bhopal. With
+                    a keen interest in creating intuitive and engaging user experiences, I've developed several
+                    non-functional clones of popular websites, including Instagram, Apple and Netflix, to hone my skills
+                    in HTML, CSS, and JavaScript. I am continuously exploring new technologies and methodologies to
+                    enhance my projects and deliver impactful solutions. Thank you for visiting my portfolio, and I look
+                    forward to connecting with you!
+                </p>
+            </div>
+        </div>
+    </section>
 
-            <section id="secondPage">
-                <h1 class="heading">ABOUT</h1>
-                <div class="info">
-                    <div class="info-content">
-                        <div class="basic">
-                            <h1 class="name">Arush Nandakumar Menon</h1>
-                            <p>Second Year CSE Student</p>
-                            <p>VIT Bhopal University</p>
-                        </div>
-                        <div class="advanced">
-                            <p>Age : 18</p>
-                            <p>Degree: BTech in CSE Core</p>
-                        </div>
+    <section id="projects">
+        <h1 class="heading">PROJECTS</h1>
+        <div class="project-container">
+            <div class="cards">
+                <div class="card-img"><img src="/images/apple.png"></div>
+                <h3>Apple Homepage Clone</h3>
+                    <p>A responsive replica of the apple homepage, showcasing sleek design and layout principles.</p>
+                    <div class="card-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                     </div>
+                    <a href="#" class="link">
+                        <span>🔗</span> Visit Project
+                    </a>
+            </div>
 
-                    <div class="about">
-                        <p>
-                            I'm a passionate frontend web developer and aspiring tech innovator based in VIT Bhopal.
-                            With
-                            a keen interest in creating intuitive and engaging user experiences, I've developed several
-                            non-functional clones of popular websites, including Instagram, Apple and Netflix, to hone
-                            my skills
-                            in HTML, CSS, and JavaScript. I am continuously exploring new technologies and methodologies
-                            to
-                            enhance my projects and deliver impactful solutions. Thank you for visiting my portfolio,
-                            and I look
-                            forward to connecting with you!
-                        </p>
+            <div class="cards">
+                <div class="card-img"><img src="/images/insta.png"></div>
+                <h3>Instagram Homepage Clone</h3>
+                    <p>A visually appealing clone of the instagram homepage, highlighting UI elements and interactivity.</p>
+                    <div class="card-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                     </div>
-                </div>
-            </section>
+                    <a href="#" class="link">
+                        <span>🔗</span> Visit Project
+                    </a>
+            </div>
 
-            <section id="thirdPage">
-                <h1 class="heading">PROJECTS</h1>
-                <!-- <div class="cards">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+            <div class="cards">
+                <div class="card-img"><img src="/images/netflix.png"></div>
+                <h3>Netflix Sign-In Page Clone</h3>
+                    <p>A functional imitation of the netflix sign-in page, emphasizing clean design and user-friendly experience.</p>
+                    <div class="card-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                     </div>
+                    <a href="#" class="link">
+                        <span>🔗</span> Visit Project
+                    </a>
+            </div>
 
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+            <div class="cards">
+                <div class="card-img"><img src="/images/pixellab.png"></div>
+                <h3>Pixellab Homepage Clone</h3>
+                    <p>A creative clone of the pixellab homepage, focusing on modern aesthetics and engaging visuals.</p>
+                    <div class="card-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                     </div>
+                    <a href="#" class="link">
+                        <span>🔗</span> Visit Project
+                    </a>
+            </div>
 
-                    <div class="card" >
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+            <div class="cards">
+                <div class="card-img"><img src="/images/portfolio.png"></div>
+                <h3>Secondary Portfolio Website</h3>
+                    <p>A comprehensive showcase of diverse projects, demonstrating skills in frontend development and design.</p>
+                    <div class="card-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                     </div>
+                    <a href="#" target="_blank" class="link">
+                        <span>🔗 Visit Project</span>
+                    </a>
+            </div>
+        </div>
+    </section>
 
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+    <section id="skills">
+        <h1 class="heading">SKILLS</h1>
+        <div class="skill-set">
+            <ul class="tech-skills">
+                <h3>Technical Skills</h3>
+                <li>
+                    <div class="skill-info"><span>HTML</span><span>95%</span></div>
+                    <div class="skill-bar">
+                        <div class="html"></div>
                     </div>
-
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+                </li>
+                <li>
+                    <div class="skill-info"><span>CSS</span><span>90%</span></div>
+                    <div class="skill-bar">
+                        <div class="css"></div>
                     </div>
-
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">...</p>
-                        </div>
+                </li>
+                <li>
+                    <div class="skill-info"><span>JavaScript</span><span>65%</span></div>
+                    <div class="skill-bar">
+                        <div class="js"></div>
                     </div>
-                </div> -->
-
-            </section>
-
-            <section id="fourthPage">
-                <h1 class="heading">CONTACT</h1>
-                <div class="contact">
-                    <div class="contact-left">
-                        <p><i class="fa-solid fa-envelope"></i>Email : arushn.2005@gmail.com</p>
-                        <p><i class="fa-solid fa-phone"></i>Contact : 6366647692</p>
+                </li>
+                <li>
+                    <div class="skill-info"><span>C++</span><span>50%</span></div>
+                    <div class="skill-bar">
+                        <div class="cpp"></div>
                     </div>
-                    <div class="contact-right">
-                        <form class="form">
-                            <div class="name-email">
-                                <input type="text" placeholder="Your Name" id="username" name="user">
-                                <input type="text" placeholder="Your Email" id="useremail" name="user">
+                </li>
+                <li>
+                    <div class="skill-info"><span>Python</span><span>85%</span></div>
+                    <div class="skill-bar">
+                        <div class="python"></div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="pro-skills">
+                <h3>Professional Skills</h3>
+                <div class="pro-skill">
+                    <div class="pro-skill-1">
+                        <div class="progress-bar">
+                            <div class="progress-ring">
+                                <span class="progress-value">90%</span>
                             </div>
-
-                            <label for="subject"></label>
-                            <input type="text" placeholder="Subject" id="subject" name="user">
-
-                            <label for="feedback"></label>
-                            <textarea id="feeback" placeholder="Message" id="message" name="user"></textarea><br>
-                            <button>Send Message</button>
-                        </form>
+                        </div>
+                        <div class="progress-info">Teamwork</div>
+                        <div class="progress-bar">
+                            <div class="progress-ring">
+                                <span class="progress-value">70%</span>
+                            </div>
+                        </div>
+                        <div class="progress-info">Communication</div>
+                    </div>
+                    <div class="pro-skill-2">
+                        <div class="progress-bar">
+                            <div class="progress-ring">
+                                <span class="progress-value">85%</span>
+                            </div>
+                        </div>
+                        <div class="progress-info">Problem Solving</div>
+                        <div class="progress-bar">
+                            <div class="progress-ring">
+                                <span class="progress-value">60%</span>
+                            </div>
+                        </div>
+                        <div class="progress-info">Creativity</div>
                     </div>
                 </div>
-                <div class="social-end">
-                    <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </section>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="heading">CONTACT</h1>
+        <div class="contact">
+            <div class="contact-left">
+                <a href="#"><i class="fa-solid fa-envelope"></i>Email : arushn.2005@gmail.com</a>
+                <a href="#"><i class="fa-solid fa-phone"></i>Contact : 6366647692</a>
+            </div>
+            <div class="contact-right">
+                <form class="form">
+                    <div class="name-email">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                    </div>
+
+                    <label for="feedback"></label>
+                    <textarea id="feeback" placeholder="Message"></textarea><br>
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-end">
+            <a href="/index.html">Portfolio</a>
+            <a href="https://www.instagram.com/_.arush.menon._/" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/arushn47/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/arushn47" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>© All Rights Reserved By Arush Nandakumar Menon</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="app.js"></script>
 </body>
 
