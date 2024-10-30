@@ -52,7 +52,7 @@ let typed = new Typed('span', {
 });
 
 const sections = document.querySelectorAll("section");
-
+const nav = document.querySelectorAll(".nav-item a");
 
 window.onscroll = () => {
     sections.forEach((sec) => {
