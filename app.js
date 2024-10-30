@@ -3,28 +3,36 @@ window.addEventListener("scroll", function () {
     navbar.classList.toggle("sticky", window.scrollY > 0);
 });
 
-const sidebar = document.querySelector(".side-bar");
+const side_bar = document.querySelector(".sidebar");
 const ham = document.querySelector(".ham");
 const closeham = document.querySelector(".closeham");
-const navLinks = document.querySelectorAll(".side-bar li a");
+const navLinks = document.querySelectorAll(".sidebar li a");
+let scrollPosition = 0;
 
 function showSidebar() {
-    sidebar.classList.add("active");
+    side_bar.classList.add("active");
     ham.style.display = "none";
     closeham.style.display = "block";
+    document.html.classList.add("no-scroll");
+    scrollPosition = window.scrollY;
 };
 
 function hideSidebar() {
-    sidebar.classList.remove("active");
+    side_bar.classList.remove("active");
     closeham.style.display = "none";
     if (window.innerWidth < 925) {
         ham.style.display = "block";
+        document.html.classList.remove("no-scroll");
+        window.scrollTo(0, scrollPosition);
     }
 
     else {
         ham.style.display = "none";
     }
 };
+
+ham.addEventListener("click", showSidebar);
+closeham.addEventListener("click", hideSidebar);
 
 navLinks.forEach(link => {
     link.addEventListener("click", hideSidebar);
@@ -44,7 +52,7 @@ let typed = new Typed('span', {
 });
 
 const sections = document.querySelectorAll("section");
-const nav = document.querySelectorAll(".nav-item a");
+
 
 window.onscroll = () => {
     sections.forEach((sec) => {
@@ -57,7 +65,7 @@ window.onscroll = () => {
             nav.forEach((link) => {
                 link.classList.remove("active");
             });
-            
+
             const link = document.querySelector(`.nav-item a[href*="${id}"]`);
             if (link) {
                 link.classList.add("active");
@@ -75,19 +83,26 @@ function toggleMode() {
     }
 
     else {
-        body.classList.replace( "light-mode", "dark-mode");
+        body.classList.replace("light-mode", "dark-mode");
     }
 
     if (moon.classList.contains('fa-sun')) {
-        moon.classList.replace('fa-sun','fa-moon');
+        moon.classList.replace('fa-sun', 'fa-moon');
     }
 
     else {
-        moon.classList.replace('fa-moon','fa-sun');
+        moon.classList.replace('fa-moon', 'fa-sun');
     }
 };
 
 document.querySelectorAll('.progress-bar').forEach(bar => {
     const percentage = bar.querySelector('.progress-value').textContent.trim().replace('%', '');
     bar.style.setProperty('--percentage', percentage);
+});
+
+
+gsap.to(".sidebar", {
+    duration: 0.5,
+    opacity: 1,
+    x: 0, // Adjust the x value based on your desired animation
 });
