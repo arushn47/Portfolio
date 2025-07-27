@@ -1,19 +1,28 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// Instantiate Resend with the API key from .env
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req) {
   try {
+    // Check if API key is present
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("Missing RESEND_API_KEY environment variable");
+      return NextResponse.json(
+        { success: false, error: "Email service is not configured." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
+
     const body = await req.json();
     const { firstname, lastname, email, message } = body;
 
     const { data, error } = await resend.emails.send({
       from: "Portfolio Contact Form <onboarding@resend.dev>",
-      to: "arushn.2005@gmail.com", 
+      to: "arushn.2005@gmail.com",
       subject: `New Message from ${firstname} ${lastname}`,
-      reply_to: email, 
+      reply_to: email,
       html: `
         <p>You have a new message from your portfolio contact form:</p>
         <p><strong>Name:</strong> ${firstname} ${lastname}</p>
