@@ -4,6 +4,47 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@components/ui/textarea";
+import { AnimatedTooltip } from "../ui/animated-tooltip";
+import {
+    IconMailFilled,
+    IconBrandGithubFilled,
+    IconBrandLinkedinFilled,
+    IconBrandTwitterFilled,
+    IconBrandDiscordFilled,
+} from "@tabler/icons-react";
+
+const icons = [
+    {
+        id: 1,
+        name: "Mail",
+        image: <IconMailFilled/>,
+        link: "mailto:arushn.2005@gmail.com",
+    },
+    {
+        id: 2,
+        name: "GitHub",
+        image: <IconBrandGithubFilled/>,
+        link: "https://github.com/arushn47",
+    },
+    {
+        id: 3,
+        name: "LinkedIn",
+        image: <IconBrandLinkedinFilled/>,
+        link: "https://www.linkedin.com/in/arushn47/",
+    },
+    {
+        id: 4,
+        name: "Twitter",
+        image:<IconBrandTwitterFilled/>,
+        link: "https://x.com/arushn_07",
+    },
+    {
+        id: 5,
+        name: "Discord",
+        image:<IconBrandDiscordFilled/>,
+        link: "https://discord.com/users/685526855767425026",
+    },
+]
 
 export function SignupFormDemo() {
   const [formData, setFormData] = React.useState({
@@ -55,13 +96,16 @@ export function SignupFormDemo() {
   };
 
   return (
-    <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black z-100">
+    <div className="shadow-input w-full rounded-none">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
         Contact Me
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
         Fill the form below to get in touch with me. I&apos;ll respond as soon as possible!
       </p>
+      <div className="mt-5 flex justify-center gap-4 items-center flex-wrap">
+        <AnimatedTooltip items={icons} />
+      </div>
       {submitted ? (
         <p className="mt-6 text-green-500 text-center">
           Thank you for contacting me. I&apos;ll get back to you soon!

@@ -42,7 +42,7 @@ export const AnimatedTooltip = ({ items }) => {
 
         return (
           <div
-            className="group relative -mr-[-10%]"
+            className="group relative"
             key={item.name}
             onMouseEnter={() => setHoveredIndex(item.id)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -77,13 +77,12 @@ export const AnimatedTooltip = ({ items }) => {
                 </motion.div>
               )}
             </AnimatePresence>
-            {/* V-- THE FIX IS HERE --V */}
             <a
               href={item.link}
               target={isWebLink ? "_blank" : undefined}
               rel={isWebLink ? "noopener noreferrer" : undefined}
               onMouseMove={handleMouseMove}
-              className="flex items-center justify-center !m-0 h-14 w-14 rounded-full border-2 border-white !p-0 transition duration-500 group-hover:z-30 group-hover:scale-115 hover:shadow-[0_0_8px_#ffffff55]"
+              className="flex items-center justify-center !m-0 h-12 w-12 rounded-full border-2 border-white !p-0 transition duration-500 group-hover:z-30 group-hover:scale-115 hover:shadow-[0_0_8px_#ffffff55]"
             >
               {item.image}
             </a>

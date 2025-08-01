@@ -43,16 +43,16 @@ const icons = [
 ];
 
 export function AnimatedTooltipPreview() {
-    return (
-        <div>
-            <div>
-                <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center mb-15 mr-9">
-                    Socials
-                </h1>
-            </div>
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                <AnimatedTooltip items={icons} />
-            </div>
-        </div>
-    );
+  return (
+    <div className="w-full px-3 sm:px-6">
+      <div>
+        <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-6xl font-bold text-center mb-8">
+          Socials
+        </h1>
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-5 w-full mb-4">
+        <AnimatedTooltip items={icons} />
+      </div>
+    </div>
+  );
 }

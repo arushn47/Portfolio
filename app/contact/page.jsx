@@ -3,17 +3,20 @@ import { AnimatedTooltipPreview } from "@components/aceternity/animated-tooltip"
 
 export default function ContactPage() {
     return (
-        <div className="relative flex items-center justify-around min-h-screen">
-            <div>
-                <SignupFormDemo />
+        <div>
+            <div className="flex flex-col items-center w-full max-w-5xl">
+                <h1 className="text-4xl lg:text-6xl font-bold text-center mt-10 mb-4 text-white relative z-20">
+                    Contact
+                </h1>
+                <div className="w-full max-w-2xl h-10 relative">
+                    {/* Gradients */}
+                    <div className="absolute left-5 right-5 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-full blur-sm" />
+                    <div className="absolute left-5 right-5 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-full" />
+                    <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-2/3 blur-sm" />
+                    <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
+                </div>
             </div>
-            <div className="hidden md:block fixed left-1/2 top-1/2 h-full w-[40%] -translate-x-1/2 z-[-1]">
-                <div className="rotate-90 absolute h-[1.5px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-            </div>
-            <div className="mr-10">
-                <AnimatedTooltipPreview />
-            </div>
-
+            <SignupFormDemo />
         </div>
     );
 }
