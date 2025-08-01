@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { CardSpotlight } from "@components/ui/card-spotlight";
 
 export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
@@ -32,7 +33,7 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+          <CardSpotlight>
             <div className="relative z-50">
               <div className="p-4 flex flex-col items-center justify-center text-center h-full">
                 <div className="w-12 h-12 mb-4 flex items-center justify-center">
@@ -43,7 +44,7 @@ export const HoverEffect = ({ items, className }) => {
                 </h4>
               </div>
             </div>
-          </div>
+          </CardSpotlight>
         </a>
       ))}
     </div>
@@ -63,7 +64,7 @@ export const Card = ({ className, children }) => (
 
 
 export const CardTitle = ({ className, children }) => (
-    <h4 className={cn("text-zinc-100 font-medium tracking-wide mt-4 text-center", className)}>
-        {children}
-    </h4>
+  <h4 className={cn("text-zinc-100 font-medium tracking-wide mt-4 text-center", className)}>
+    {children}
+  </h4>
 );

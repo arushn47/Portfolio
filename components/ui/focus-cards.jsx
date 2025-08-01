@@ -12,7 +12,7 @@ export const Card = React.memo(({
     onMouseEnter={() => setHovered(index)}
     onMouseLeave={() => setHovered(null)}
     className={cn(
-      "rounded-lg relative overflow-hidden h-70 w-full transition-all duration-300 ease-out",
+      "rounded-lg relative overflow-hidden h-71 w-full transition-all duration-300 ease-out",
       hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
     )}>
     <img src={card.src} alt={card.title} className="object-cover absolute inset-0" />

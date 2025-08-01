@@ -1,16 +1,14 @@
 "use client";
 import { HoverEffect } from "../ui/card-hover-effect";
 
-
 export function CardHoverEffectDemo() {
     return (
-        <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-8 mb-30">
             <HoverEffect items={skills} />
         </div>
     );
 }
 
-// The updated skills array with colored icons
 export const skills = [
     { title: "HTML5", link: "https://developer.mozilla.org/en-US/docs/Web/HTML", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" /> },
     { title: "CSS3", link: "https://developer.mozilla.org/en-US/docs/Web/CSS", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" /> },
@@ -28,4 +26,3 @@ export const skills = [
     { title: "MongoDB", link: "https://www.mongodb.com/", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" /> },
     { title: "AWS", link: "https://aws.amazon.com/", icon: <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" /> },
 ];
-

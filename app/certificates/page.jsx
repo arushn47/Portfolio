@@ -2,9 +2,9 @@ import { FocusCardsDemo } from "@components/aceternity/focus-cards";
 
 export default function CertificatesPage() {
   return (
-    <>
+    <div className="mb-30">
       <div className="flex flex-col items-center w-full max-w-7xl">
-        <h1 className="text-4xl lg:text-6xl font-bold text-center mt-10 mb-4 text-white relative z-20">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center mt-10 mb-4 text-white relative z-20">
           Certifications
         </h1>
         <div className="w-full max-w-2xl h-10 relative">
@@ -18,6 +18,6 @@ export default function CertificatesPage() {
       <div className="w-sm lg:w-7xl mt-5">
       <FocusCardsDemo />
     </div>
-    </>
+    </div>
   );
 }

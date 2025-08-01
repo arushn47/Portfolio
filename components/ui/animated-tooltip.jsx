@@ -82,7 +82,7 @@ export const AnimatedTooltip = ({ items }) => {
               target={isWebLink ? "_blank" : undefined}
               rel={isWebLink ? "noopener noreferrer" : undefined}
               onMouseMove={handleMouseMove}
-              className="flex items-center justify-center !m-0 h-12 w-12 rounded-full border-2 border-white !p-0 transition duration-500 group-hover:z-30 group-hover:scale-115 hover:shadow-[0_0_8px_#ffffff55]"
+              className="flex items-center justify-center !m-0 h-12 w-12 rounded-full border-1 border-neutral-500 !p-0 transition duration-500 group-hover:z-30 group-hover:scale-115 hover:shadow-[0_0_10px_#ffffff55]"
             >
               {item.image}
             </a>

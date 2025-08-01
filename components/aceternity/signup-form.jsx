@@ -96,14 +96,14 @@ export function SignupFormDemo() {
   };
 
   return (
-    <div className="shadow-input w-full rounded-none">
+    <div className="shadow-input w-full rounded-none ">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-        Contact Me
+        Contact Form
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
         Fill the form below to get in touch with me. I&apos;ll respond as soon as possible!
       </p>
-      <div className="mt-5 flex justify-center gap-4 items-center flex-wrap">
+      <div className="mt-6 flex justify-center gap-4 items-center flex-wrap">
         <AnimatedTooltip items={icons} />
       </div>
       {submitted ? (

@@ -2,12 +2,12 @@ import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-
 
 export default function ProjectsPage() {
   return (
-    <div className="w-full flex flex-col justify-center items-center py-10">
+    <div className="w-full flex flex-col justify-center items-center py-7">
       <div className="flex flex-col items-center w-full max-w-5xl">
-        <h1 className="text-4xl lg:text-6xl font-bold text-center mb-4 text-white relative z-20">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center mb-4 text-white relative z-20">
           Projects
         </h1>
-        <div className="w-full max-w-2xl h-14 relative">
+        <div className="w-full max-w-lg h-14 relative">
           {/* Gradients */}
           <div className="absolute left-5 right-5 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-full blur-sm" />
           <div className="absolute left-5 right-5 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-full" />
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10 mb-20">
         <DirectionAwareHoverDemo
           imageUrl="/projects/local-ai.png"
           title="Local AI"
