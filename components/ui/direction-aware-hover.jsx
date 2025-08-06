@@ -1,152 +1,85 @@
 "use client";
 
-import { useRef, useState } from "react";
-
-import { AnimatePresence, motion } from "motion/react";
-import { cn } from "@/lib/utils";
+import React, { useState, useRef } from "react";
 
 export const DirectionAwareHover = ({
   imageUrl,
+  alt = "Background Image",
   children,
-  childrenClassName,
+  className,
   imageClassName,
-  className
 }) => {
   const ref = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const [direction, setDirection] = useState("top");
 
-  const [direction, setDirection] = useState("left");
+  const getDirection = (event, rect) => {
+    const { clientX, clientY } = event;
+    const { width, height, top, left } = rect;
+    const x = (clientX - left - width / 2) * (width > height ? height / width : 1);
+    const y = (clientY - top - height / 2) * (height > width ? width / height : 1);
+    const angle = Math.atan2(y, x);
+    const degrees = (angle * 180) / Math.PI + 180;
 
-  const handleMouseEnter = (
-    event
-  ) => {
+    if (degrees >= 45 && degrees < 135) return "top";
+    if (degrees >= 135 && degrees < 225) return "right";
+    if (degrees >= 225 && degrees < 315) return "bottom";
+    return "left";
+  };
+  
+  const handleMouseEnter = (event) => {
     if (!ref.current) return;
+    const newDirection = getDirection(event, ref.current.getBoundingClientRect());
+    setDirection(newDirection);
+    setIsHovering(true);
+  };
 
-    const direction = getDirection(event, ref.current);
-    console.log("direction", direction);
+  const handleMouseLeave = (event) => {
+    if (!ref.current) return;
+    const newDirection = getDirection(event, ref.current.getBoundingClientRect());
+    setDirection(newDirection);
+    setIsHovering(false);
+  };
+
+  const getTransformClasses = () => {
+    if (isHovering) {
+      return 'translate-x-0 translate-y-0';
+    }
     switch (direction) {
-      case 0:
-        setDirection("top");
-        break;
-      case 1:
-        setDirection("right");
-        break;
-      case 2:
-        setDirection("bottom");
-        break;
-      case 3:
-        setDirection("left");
-        break;
-      default:
-        setDirection("left");
-        break;
+      case 'top': return '-translate-y-full';
+      case 'bottom': return 'translate-y-full';
+      case 'left': return '-translate-x-full';
+      case 'right': return 'translate-x-full';
+      default: return '-translate-y-full';
     }
   };
 
-  const getDirection = (
-    ev,
-    obj
-  ) => {
-    const { width: w, height: h, left, top } = obj.getBoundingClientRect();
-    const x = ev.clientX - left - (w / 2) * (w > h ? h / w : 1);
-    const y = ev.clientY - top - (h / 2) * (h > w ? w / h : 1);
-    const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
-    return d;
-  };
-
   return (
-    <motion.div
-      onMouseEnter={handleMouseEnter}
+    <div
       ref={ref}
-      className={cn(
-        "md:h-[300px] md:w-[500px] h-[180px] w-[300px] bg-transparent rounded-lg overflow-hidden group/card relative",
-        className
-      )}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onFocus={() => setIsHovering(true)}
+      onBlur={() => setIsHovering(false)}
+      className={`group relative h-full w-full overflow-hidden ${className || ''}`}
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-          className="relative h-full w-full"
-          initial="initial"
-          whileHover={direction}
-          exit="exit">
-          <motion.div
-            className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
-          <motion.div
-            variants={variants}
-            className="h-full w-full relative bg-gray-50 dark:bg-black"
-            transition={{
-              duration: 0.2,
-              ease: "easeOut",
-            }}>
-            <img
-              alt="image"
-              className={cn("h-full w-full object-cover scale-[1.15]", imageClassName)}
-              width="1000"
-              height="1000"
-              src={imageUrl} />
-          </motion.div>
-          <motion.div
-            variants={textVariants}
-            transition={{
-              duration: 0.5,
-              ease: "easeOut",
-            }}
-            className={cn("text-white absolute bottom-4 left-4 z-40", childrenClassName)}>
+      <img
+        src={imageUrl}
+        alt={alt}
+        className={`h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-focus:scale-105 ${imageClassName || ''}`}
+        onError={(e) => {
+          e.currentTarget.onerror = null; 
+          e.currentTarget.src=`https://placehold.co/600x400/171717/FFF?text=Image+Not+Found`;
+        }}
+      />
+      <div
+        className={`absolute inset-0 flex items-center justify-center bg-black/70 p-4 transition-transform duration-300 ease-out 
+                   ${getTransformClasses()}`}
+      >
+        <div className="text-white">
             {children}
-          </motion.div>
-        </motion.div>
-      </AnimatePresence>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-const variants = {
-  initial: {
-    x: 0,
-  },
-
-  exit: {
-    x: 0,
-    y: 0,
-  },
-  top: {
-    y: 20,
-  },
-  bottom: {
-    y: -20,
-  },
-  left: {
-    x: 20,
-  },
-  right: {
-    x: -20,
-  },
-};
-
-const textVariants = {
-  initial: {
-    y: 0,
-    x: 0,
-    opacity: 0,
-  },
-  exit: {
-    y: 0,
-    x: 0,
-    opacity: 0,
-  },
-  top: {
-    y: -20,
-    opacity: 1,
-  },
-  bottom: {
-    y: 2,
-    opacity: 1,
-  },
-  left: {
-    x: -2,
-    opacity: 1,
-  },
-  right: {
-    x: 20,
-    opacity: 1,
-  },
 };

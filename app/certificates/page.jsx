@@ -1,6 +1,20 @@
+"use client";
+
+import React, { useState } from 'react';
 import { FocusCardsDemo } from "@components/aceternity/focus-cards";
+import { Modal } from "@components/ui/focus-cards";
 
 export default function CertificatesPage() {
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCard(null);
+  };
+
   return (
     <div className="mb-30">
       <div className="flex flex-col items-center w-full max-w-7xl">
@@ -16,8 +30,9 @@ export default function CertificatesPage() {
         </div>
       </div>
       <div className="w-sm lg:w-7xl mt-5">
-      <FocusCardsDemo />
-    </div>
+        <FocusCardsDemo onCardClick={handleCardClick} />
+      </div>
+      <Modal card={selectedCard} onClose={handleCloseModal} />
     </div>
   );
 }

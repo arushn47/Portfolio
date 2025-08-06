@@ -19,38 +19,47 @@ export default function ProjectsPage() {
         <DirectionAwareHoverDemo
           imageUrl="/projects/local-ai.png"
           title="Local AI"
+          desc="An offline AI assistant powered by Ollama and Python Flask, featuring a Next.js frontend and custom local integration. Brings LLM to local environments."
           techStack="Next.js, Tailwind CSS, Python (Flask), Ollama"
-          link="https://github.com/arushn47/local-ai"
+          repo_link="https://github.com/arushn47/local-ai"
         />
         <DirectionAwareHoverDemo
           imageUrl="/projects/promptopia.png"
           title="Promptopia"
-          techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB, Node.js"
+          desc="A modern open-source platform for discovering and sharing high-quality AI prompts. Includes authentication, profiles, and real-time data with MongoDB."
+          techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://promptopia-by-arush.vercel.app"
+          repo_link="https://github.com/arushn47/local-ai"
         />
         <DirectionAwareHoverDemo
           imageUrl="/projects/wanderlust.png"
           title="Wander Lust"
-          techStack="MERN Stack, JavaScript, Git, AWS"
-          link="https://github.com/arushn47"
+          desc="A travel web app for exploring destinations, planning trips, and sharing travel experiences using the powerful MERN stack."
+          techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
+          link="https://wanderlust-by-arush.vercel.app"
+          repo_link="https://github.com/arushn47/local-ai"
         />
         <DirectionAwareHoverDemo
           imageUrl="/projects/face-recognition-attendance-system.png"
           title="Face Recognition Based Attendance System"
-          techStack="HTML, CSS, JavaScript, Python, Flask, OpenCV, dlib"
-          link="https://github.com/arushn47/Face-Detection-Based-Attendance-System"
+          desc="An automated attendance system utilizing facial recognition technology powered by OpenCV and dlib libraries, with a Python Flask backend."
+          techStack="JavaScript, Python, Flask, OpenCV, dlib, HTML, CSS"
+          repo_link="https://github.com/arushn47/Face-Detection-Based-Attendance-System"
         />
         <DirectionAwareHoverDemo
           imageUrl="/projects/tree-detection.png"
           title="Tree Detection and Count"
-          techStack="HTML, CSS, Python (Flask), YOLOv8"
-          link="https://github.com/arushn47/Tree-Detection-and-Count"
+          desc="A YOLOv8-based web application for detecting and counting trees using aerial images, combining computer vision with a Python Flask API."
+          techStack="Python, Flask, YOLOv5, PyTorch, OpenCV, HTML, CSS"
+          repo_link="https://github.com/arushn47/Tree-Detection-and-Count"
         />
         <DirectionAwareHoverDemo
           imageUrl="/projects/evclub.png"
           title="EV Club Website"
+          desc="Official site of the EV Club, designed for community outreach and events. Built with GSAP for smooth animations and responsive user experience."
           techStack="HTML, CSS, JavaScript, GSAP"
           link="https://evclub.vercel.app"
+          repo_link="https://github.com/arushn47/evclub"
         />
       </div>
     </div>

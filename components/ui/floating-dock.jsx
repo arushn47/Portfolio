@@ -108,8 +108,7 @@ export function FloatingDockDemo() {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        // Always horizontal, always fixed at bottom-center.
-        "fixed left-1/2 bottom-6 z-40 -translate-x-1/2 mx-auto flex h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 dark:bg-neutral-900 shadow-2xl"
+        "fixed left-1/2 bottom-2 z-40 -translate-x-1/2 mx-auto flex h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 dark:bg-neutral-900 shadow-2xl"
       )}
     >
       {links.map((item) => (
