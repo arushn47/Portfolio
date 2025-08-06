@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { cn } from "@/lib/utils"; // Assuming you have a utils file for cn
 
 export function Modal({ card, onClose }) {
@@ -31,7 +31,6 @@ export function Modal({ card, onClose }) {
         <img
           src={card.src}
           alt={card.title}
-          loading="lazy"
           className="w-full h-110 object-contain rounded-t-2xl"
         />
          <div className="p-4 bg-black/50 rounded-b-2xl">
@@ -50,14 +49,14 @@ export function Modal({ card, onClose }) {
   );
 }
 
-const Card = React.memo(({ card, index, hovered, setHovered, onCardClick }) => (
+const Card = memo(({ card, index, hovered, setHovered, onCardClick }) => (
   <div
     onClick={() => onCardClick(card)}
     onMouseEnter={() => setHovered(index)}
     onMouseLeave={() => setHovered(null)}
     className={cn(
-      "rounded-lg relative overflow-hidden h-72 w-full transition-all duration-100 ease-out cursor-pointer",
-      hovered !== null && hovered !== index && "blur-xs scale-[0.98]"
+      "rounded-lg relative overflow-hidden h-72 w-full transition-all duration-200 ease-in-out cursor-pointer",
+      hovered !== null && hovered === index && "scale-[1.05]"
     )}>
     <img src={card.src} alt={card.title} className="object-cover absolute inset-0 h-full w-full" />
   </div>

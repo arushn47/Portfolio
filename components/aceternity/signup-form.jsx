@@ -117,7 +117,7 @@ export function SignupFormDemo() {
               <Label htmlFor="firstname">First name</Label>
               <Input
                 id="firstname"
-                placeholder="Tyler"
+                placeholder="Arush"
                 type="text"
                 value={formData.firstname}
                 onChange={handleChange}
@@ -127,7 +127,7 @@ export function SignupFormDemo() {
               <Label htmlFor="lastname">Last name</Label>
               <Input
                 id="lastname"
-                placeholder="Durden"
+                placeholder="Menon"
                 type="text"
                 value={formData.lastname}
                 onChange={handleChange}
@@ -138,7 +138,7 @@ export function SignupFormDemo() {
             <Label htmlFor="email">Email Address</Label>
             <Input
               id="email"
-              placeholder="projectmayhem@fc.com"
+              placeholder="arushn.2005@gmail.com"
               type="email"
               value={formData.email}
               onChange={handleChange}
