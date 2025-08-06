@@ -22,7 +22,15 @@ export default function ProjectsPage() {
           desc="Official site of the EV Club, designed for community outreach and events. Built with GSAP for smooth animations and responsive user experience."
           techStack="HTML, CSS, JavaScript, GSAP"
           link="https://evclub.vercel.app"
-          repo_link="https://github.com/arushn47/evclub"
+          repo_link="https://github.com/arushn47/EV-Club-Website"
+        />
+        <DirectionAwareHoverDemo
+          imageUrl="/projects/calculator.png"
+          title="Calculator App"
+          desc="Official site of the EV Club, designed for community outreach and events. Built with GSAP for smooth animations and responsive user experience."
+          techStack="HTML, CSS, JavaScript"
+          link="https://arush-calc.vercel.app/"
+          repo_link="https://github.com/arushn47/Calculator"
         />
       </div>
     </div>
