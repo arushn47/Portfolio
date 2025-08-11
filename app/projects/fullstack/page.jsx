@@ -27,10 +27,26 @@ export default function ProjectsPage() {
         <DirectionAwareHoverDemo
           imageUrl="/projects/wanderlust.png"
           title="Wander Lust"
-          desc="A travel web app for exploring destinations, planning trips, and sharing travel experiences using the powerful MERN stack."
+          desc="A travel web app for exploring destinations, planning trips, and sharing travel experiences using the powerful Next.js, MongoDB, and NextAuth."
           techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://wanderlust-by-arush.vercel.app"
           repo_link="https://github.com/arushn47/local-ai"
+        />
+        <DirectionAwareHoverDemo
+          imageUrl="/projects/anmwallet.png"
+          title= "ANM Wallet"
+          desc= "A personal expense tracker and budgeting tool for students, designed for clarity and ease of use. Built with Next.js, MongoDB, and NextAuth."
+          techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
+          link="https://anm-wallet.vercel.app"
+          repo_link="https://github.com/arushn47/expense-tracker"
+        />
+        <DirectionAwareHoverDemo
+          imageUrl="/projects/rushkart.png"
+          title= "RushKart"
+          desc= "A visually stunning e-commerce marketplace for tech and lifestyle products, featuring distinct seller and customer roles, built with Next.js, MongoDB, and NextAuth."
+          techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
+          link="https://rushkart.vercel.app"
+          repo_link="https://github.com/arushn47/rushkart"
         />
       </div>
     </div>
