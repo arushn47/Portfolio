@@ -15,7 +15,7 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10 mb-20">
+      <div className="p-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10 mb-20">
         <DirectionAwareHoverDemo
           imageUrl="/projects/local-ai.png"
           title="Local AI"
