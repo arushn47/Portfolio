@@ -1,49 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useMotionValue, animate, useMotionTemplate, useScroll, useTransform } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-  return isMobile;
-};
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useState } from "react";
 
 const ProjectSection = ({ title, description, path, gradient, snapClass, onInView }) => {
-  const isMobile = useIsMobile();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-
-  useEffect(() => {
-    if (!isMobile) {
-      const handleMouseMove = (e) => {
-        animate(x, e.clientX, { duration: 0.2, ease: "linear" });
-        animate(y, e.clientY, { duration: 0.2, ease: "linear" });
-      };
-      window.addEventListener("mousemove", handleMouseMove, { passive: true });
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, [x, y, isMobile]);
 
   const titleWords = title.split(" ");
   const containerVariants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.08 } }
+    visible: { transition: { staggerChildren: 0.08 } },
   };
   const wordVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -54,7 +29,7 @@ const ProjectSection = ({ title, description, path, gradient, snapClass, onInVie
     <motion.section
       id={path.replace("/", "")}
       ref={sectionRef}
-      className={`relative flex h-screen w-full items-center overflow-hidden ${snapClass}`}
+      className={`relative flex h-screen w-full items-center overflow-hidden px-4 sm:px-8 md:px-16 ${snapClass}`}
       initial="hidden"
       whileInView="visible"
       onViewportEnter={() => onInView(path)}
@@ -63,17 +38,6 @@ const ProjectSection = ({ title, description, path, gradient, snapClass, onInVie
       {/* Parallax background */}
       <motion.div style={{ y: parallaxY }} className={`absolute inset-[-20%] z-0 ${gradient} animate-gradient-move`} />
 
-      {/* Spotlight */}
-      <motion.div
-        className="absolute inset-0 z-10"
-        style={{
-          background: isMobile
-            ? "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 40%)"
-            : "transparent",
-          maskImage: isMobile ? "none" : useMotionTemplate`radial-gradient(300px at ${x}px ${y}px, white, transparent)`,
-          WebkitMaskImage: isMobile ? "none" : useMotionTemplate`radial-gradient(300px at ${x}px ${y}px, white, transparent)`
-        }}
-      />
       <div className="absolute inset-0 z-20 bg-black/60" />
 
       {/* Centered Content */}
@@ -81,31 +45,28 @@ const ProjectSection = ({ title, description, path, gradient, snapClass, onInVie
         <div className="w-full h-screen flex flex-col justify-center items-center backdrop-blur-sm bg-black/20">
           <motion.h2
             variants={containerVariants}
-            className="text-5xl font-extrabold tracking-tighter text-white md:text-7xl mb-4 text-center"
+            className="text-3xl font-extrabold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-7xl mb-4 text-center"
           >
             {titleWords.map((word, i) => (
-              <motion.span key={i} variants={wordVariants} className="inline-block mr-4">
+              <motion.span key={i} variants={wordVariants} className="inline-block mr-2 sm:mr-4">
                 {word}
               </motion.span>
             ))}
           </motion.h2>
           <motion.p
             variants={wordVariants}
-            className="text-lg text-gray-300 mb-12 text-center max-w-2xl"
+            className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-12 max-w-full sm:max-w-2xl text-center px-2 sm:px-0"
           >
             {description}
           </motion.p>
-          <motion.div
-            variants={wordVariants}
-            className="w-full flex justify-center"
-          >
+          <motion.div variants={wordVariants} className="w-full flex justify-center">
             <Link
               href={path}
               aria-label={`View ${title} projects`}
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/20 bg-black/30 px-8 py-3 font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:scale-105"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/20 bg-black/30 px-6 py-2 sm:px-8 sm:py-3 font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:scale-105"
             >
               <span className="absolute h-0 w-0 rounded-full bg-white/20 transition-all duration-300 group-hover:h-56 group-hover:w-56"></span>
-              <span className="relative">View Projects</span>
+              <span className="relative text-sm sm:text-base">View Projects</span>
             </Link>
           </motion.div>
         </div>
@@ -120,7 +81,11 @@ const SideNav = ({ sections, activeSection }) => (
       {sections.map((section) => (
         <li key={`${section.path}-nav`}>
           <a href={`#${section.path.replace("/", "")}`} aria-label={`Go to ${section.title} section`}>
-            <div className={`w-2 h-2 rounded-full transition-all duration-300 ${activeSection === section.path ? "bg-white scale-150" : "bg-white/50 hover:bg-white"}`}></div>
+            <div
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                activeSection === section.path ? "bg-white scale-150" : "bg-white/50 hover:bg-white"
+              }`}
+            ></div>
           </a>
         </li>
       ))}
@@ -175,16 +140,16 @@ export default function ProjectsPage() {
       <main className="h-screen w-screen snap-y snap-mandatory overflow-y-auto font-inter">
         {/* Welcome Section */}
         <section
-          className="relative flex h-screen w-full flex-col justify-center snap-start items-center"
+          className="relative flex h-screen w-full flex-col justify-center snap-start items-center px-4 sm:px-8 md:px-16"
           onMouseEnter={() => setActiveSection("")}
         >
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-gray-900 via-gray-900 to-blue-950/50"></div>
-          <div className="relative z-10 w-full">
+          <div className="relative z-10 w-full max-w-5xl text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl font-extrabold tracking-tighter text-white md:text-8xl mb-10 text-center"
+              className="text-4xl font-extrabold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-8xl mb-6 sm:mb-10"
             >
               My Work
             </motion.h1>
@@ -192,7 +157,7 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-lg text-gray-400 mb-7 text-center"
+              className="text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-8"
             >
               Scroll to explore my projects.
             </motion.p>
@@ -203,7 +168,20 @@ export default function ProjectsPage() {
               className="w-full flex justify-center"
             >
               <span className="inline-block animate-bounce text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 5v14" />
+                  <path d="m19 12-7 7-7-7" />
+                </svg>
               </span>
             </motion.div>
           </div>

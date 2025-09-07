@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10 mb-20">
         <DirectionAwareHoverDemo
           imageUrl="..."
-          title="..."
+          title="CraVIT"
           desc="..."
           techStack="..."
           repo_link="..."
