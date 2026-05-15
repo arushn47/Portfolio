@@ -15,32 +15,32 @@ export function FloatingDockFinal() {
   const links = [
     {
       title: "Home",
-      icon: <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconHome className="h-full w-full text-neutral-300" />,
       href: "/",
     },
     {
       title: "About",
-      icon: <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconUser className="h-full w-full text-neutral-300" />,
       href: "/about",
     },
     {
       title: "Projects",
-      icon: <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconCode className="h-full w-full text-neutral-300" />,
       href: "/projects",
     },
     {
       title: "Skills",
-      icon: <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconBulb className="h-full w-full text-neutral-300" />,
       href: "/skills",
     },
     {
       title: "Certificates",
-      icon: <IconCertificate className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconCertificate className="h-full w-full text-neutral-300" />,
       href: "/certificates",
     },
     {
       title: "Contact",
-      icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <IconMail className="h-full w-full text-neutral-300" />,
       href: "/contact",
     },
   ];

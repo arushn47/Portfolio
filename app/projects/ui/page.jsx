@@ -1,4 +1,4 @@
-import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-hover";
+import { ProjectCard } from "@components/ui/project-card";
 
 export default function ProjectsPage() {
   return (
@@ -15,14 +15,14 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 mb-20">
-        <DirectionAwareHoverDemo
+      <div className="w-full max-w-6xl px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 mb-20">
+        <ProjectCard
           imageUrl="/projects/evclub.png"
           title="EV Club Website"
           desc="Official site of the EV Club, designed for community outreach and events. Built with GSAP for smooth animations and responsive user experience."
           techStack="HTML, CSS, JavaScript, GSAP"
           link="https://evclub.vercel.app"
-          repo_link="https://github.com/arushn47/evclub"
+          repo_link="https://github.com/arushn47/EV-Club-Website"
         />
       </div>
     </div>

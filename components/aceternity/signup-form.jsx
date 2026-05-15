@@ -97,10 +97,10 @@ export function SignupFormDemo() {
 
   return (
     <div className="shadow-input w-full rounded-none ">
-      <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+      <h2 className="text-xl font-bold text-violet-600 dark:text-violet-500">
         Contact Form
       </h2>
-      <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
+      <p className="mt-2 max-w-sm text-sm text-neutral-400 dark:text-neutral-300">
         Fill the form below to get in touch with me. I&apos;ll respond as soon as possible!
       </p>
       <div className="mt-6 flex justify-center gap-4 items-center flex-wrap">
@@ -156,7 +156,7 @@ export function SignupFormDemo() {
           </LabelInputContainer>
 
           <button
-            className="cursor-pointer group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+            className="cursor-pointer group/btn relative block h-10 w-full rounded-md bg-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
             type="submit"
             disabled={loading}
           >

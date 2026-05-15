@@ -1,4 +1,4 @@
-import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-hover";
+import { ProjectCard } from "@components/ui/project-card";
 
 export default function ProjectsPage() {
   return (
@@ -15,13 +15,14 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 mb-20">
-        <DirectionAwareHoverDemo
-          imageUrl="..."
+      <div className="w-full max-w-6xl px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 mb-20">
+        <ProjectCard
+          imageUrl="/projects/cravit.png"
           title="CraVIT"
-          desc="..."
-          techStack="..."
-          repo_link="..."
+          desc="Campus food pre-ordering web app enabling students to browse canteens, pre-order meals, and skip queues with fast, seamless UX."
+          techStack="Next.js, Tailwind CSS, MongoDB, Cloudinary, Razorpay"
+          link="https://cravit.vercel.app/"
+          repo_link="https://github.com/ianshsingh10/cravit"
         />
       </div>
     </div>

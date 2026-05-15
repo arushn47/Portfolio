@@ -1,4 +1,4 @@
-import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-hover";
+import { ProjectCard } from "@components/ui/project-card";
 
 export default function ProjectsPage() {
   return (
@@ -15,35 +15,48 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 mb-20">
-        <DirectionAwareHoverDemo
+      <div className="w-full max-w-7xl px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 mb-20">
+        <ProjectCard
+          imageUrl="/projects/student-hub-ai.png"
+          title="StudentHub"
+          category="SaaS / EdTech"
+          desc="A comprehensive academic productivity platform featuring AI study tools, task management, grade tracking, and Google Workspace integration."
+          techStack="Next.js 15, Supabase, Gemini AI, Tailwind CSS v4"
+          link="https://student-hub-ai.vercel.app/"
+          repo_link="https://github.com/arushn47/student-hub"
+        />
+        <ProjectCard
           imageUrl="/projects/promptopia.png"
           title="Promptopia"
+          category="Open Source"
           desc="A modern open-source platform for discovering and sharing high-quality AI prompts. Includes authentication, profiles, and real-time data with MongoDB."
           techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://promptopia-by-arush.vercel.app"
-          repo_link="https://github.com/arushn47/local-ai"
+          repo_link="https://github.com/arushn47/promptopia"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/wanderlust.png"
           title="Wander Lust"
+          category="Travel"
           desc="A travel web app for exploring destinations, planning trips, and sharing travel experiences using the powerful Next.js, MongoDB, and NextAuth."
           techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://wanderlust-by-arush.vercel.app"
-          repo_link="https://github.com/arushn47/local-ai"
+          repo_link="https://github.com/arushn47/wanderlust"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/anmwallet.png"
-          title= "ANM Wallet"
-          desc= "A personal expense tracker and budgeting tool for students, designed for clarity and ease of use. Built with Next.js, MongoDB, and NextAuth."
+          title="ANM Wallet"
+          category="Fintech"
+          desc="A personal expense tracker and budgeting tool for students, designed for clarity and ease of use. Built with Next.js, MongoDB, and NextAuth."
           techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://anm-wallet.vercel.app"
           repo_link="https://github.com/arushn47/expense-tracker"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/rushkart.png"
-          title= "RushKart"
-          desc= "A visually stunning e-commerce marketplace for tech and lifestyle products, featuring distinct seller and customer roles, built with Next.js, MongoDB, and NextAuth."
+          title="RushKart"
+          category="E-commerce"
+          desc="A visually stunning e-commerce marketplace for tech and lifestyle products, featuring distinct seller and customer roles, built with Next.js, MongoDB, and NextAuth."
           techStack="Next.js, React, Tailwind CSS, NextAuth.js, MongoDB"
           link="https://rushkart.vercel.app"
           repo_link="https://github.com/arushn47/rushkart"

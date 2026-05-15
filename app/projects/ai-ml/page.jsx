@@ -1,4 +1,4 @@
-import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-hover";
+import { ProjectCard } from "@components/ui/project-card";
 
 export default function ProjectsPage() {
   return (
@@ -15,24 +15,29 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="p-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-10 mb-20">
-        <DirectionAwareHoverDemo
+      <div className="w-full max-w-6xl px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 mb-20">
+
+        <ProjectCard
           imageUrl="/projects/local-ai.png"
-          title="Local AI"
-          desc="An offline AI assistant powered by Ollama and Python Flask, featuring a Next.js frontend and custom local integration. Brings LLM to local environments."
-          techStack="Next.js, Tailwind CSS, Python (Flask), Ollama"
+          title="Local Mind"
+          category="AI / Local LLM"
+          desc="An offline AI assistant powered by Ollama and Flask, featuring a Next.js frontend and custom local integration. Brings LLM to local environments."
+          techStack="Next.js, Tailwind CSS, Python(Flask), Ollama"
+          link="https://localmind.vercel.app"
           repo_link="https://github.com/arushn47/local-ai"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/face-recognition-attendance-system.png"
-          title="Face Recognition Based Attendance System"
+          title="Face Recognition Attendance"
+          category="Computer Vision"
           desc="An automated attendance system utilizing facial recognition technology powered by OpenCV and dlib libraries, with a Python Flask backend."
           techStack="JavaScript, Python, Flask, OpenCV, dlib, HTML, CSS"
           repo_link="https://github.com/arushn47/Face-Detection-Based-Attendance-System"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/tree-detection.png"
           title="Tree Detection and Count"
+          category="Computer Vision"
           desc="A YOLOv8-based web application for detecting and counting trees using aerial images, combining computer vision with a Python Flask API."
           techStack="Python, Flask, YOLOv5, PyTorch, OpenCV, HTML, CSS"
           repo_link="https://github.com/arushn47/Tree-Detection-and-Count"

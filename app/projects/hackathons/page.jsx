@@ -1,4 +1,4 @@
-import { DirectionAwareHoverDemo } from "@components/aceternity/direction-aware-hover";
+import { ProjectCard } from "@components/ui/project-card";
 
 export default function ProjectsPage() {
   return (
@@ -15,17 +15,19 @@ export default function ProjectsPage() {
           <div className="absolute left-10 right-10 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-2/3" />
         </div>
       </div>
-      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10 mb-20 ">
-        <DirectionAwareHoverDemo
+      <div className="w-full max-w-6xl px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 mb-20">
+        <ProjectCard
           imageUrl="/projects/health-ease.png"
           title="HealthEase"
+          category="HealthTech"
           desc="A MERN stack health portal that connects all your healthcare needs in one seamless platform."
           techStack="React, Tailwind CSS, MongoDB, Node.js"
           repo_link="https://github.com/ianshsingh10/Health-Ease"
         />
-        <DirectionAwareHoverDemo
+        <ProjectCard
           imageUrl="/projects/net-guardians.png"
           title="NetGuardians"
+          category="Cybersecurity"
           desc="A Flask-based web tool that detects phishing links with a simple and responsive HTML/CSS interface."
           techStack="Python(Flask), HTML, CSS"
           repo_link="https://github.com/arushn47/net-guardians"
